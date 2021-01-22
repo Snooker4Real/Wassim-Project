@@ -1,0 +1,240 @@
+:root /*Toutes les couleurs dont on a besoin pour le menu burger (couleurs)*/
+{
+  --primary:rgb(255, 93, 0);
+  --secondary:#171717;
+  --light:#F3F3F3;
+  --font-stack:'Roboto','Helvetica',sans-serif;
+}
+
+body /*Je veux que tout mon site soit en Police Time New Roman*/
+{
+	font-family:'Times New Roman', Times, serif
+}
+
+body, html, header, h1 /*Modification de la marge intérieur et extérieur de quelques éléments */
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+header, body, html /*Plein écran de l'image de cover*/
+{
+	width: 100%;
+	height: 100%;
+}
+
+header{ /*image de cover*/
+  background-image: url(images/bg.png) ;
+  background-size: cover;
+	color: white;
+}
+
+
+.wrapper /*Texte du Cover prenne tout l'écran*/
+{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.content /*Mais centrée avec un peu d'ombre pour qu'il ressorte*/
+{
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+  text-shadow: 1px 1px 10px black;
+  color: rgb(255, 93, 0); 
+}
+
+h1 /*Taille des titres h1*/
+{
+	font-size: 100px;
+}
+
+div.mid /*Placer le logo au milieu*/
+{
+	text-align: center;
+	margin-top: 40px;
+}
+img.rayon /*Arrondir les bords du logo*/
+{
+	border-radius: 20%;
+}
+
+main
+{
+	max-width: 650px;
+	margin: 80px auto;
+}
+
+p.nom /*Placer nos noms à droite de la box*/
+{
+    text-align: right;
+}
+
+p /*Taille de tous les paragraphes*/
+{
+    font-size: x-large;
+}
+
+.menu-wrapper /*Menu burger position+taille*/
+{
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.menu-wrapper .toggle /*Menu burger*/
+{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 999;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.menu-wrapper .hamburger /*Menu burger*/
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 998;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 10px;
+  transition: all 0.5s ease;
+
+}
+
+.menu-wrapper .hamburger .bar /*Menu burger*/
+{
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: var(--light);
+  z-index: 1;
+  transition: all 0.2s linear;
+}
+
+.menu-wrapper .hamburger .bar::before,
+.menu-wrapper .hamburger .bar::after /*Menu burger*/
+{
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 3px;
+  background: var(--light);
+  transition: all 0.2s linear;
+
+}
+
+.menu-wrapper .hamburger .bar::after /*Menu burger*/
+{
+  top: 10px;
+}
+
+.menu-wrapper .toggle:hover + .hamburger /*Menu burger*/
+{
+  transform: rotate(-25deg);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+
+}
+
+.menu-wrapper .toggle:checked + .hamburger /*Menu burger*/
+{
+  transform: rotate(45deg);
+}
+
+.menu-wrapper .toggle:checked:hover + .hamburger /*Menu burger*/
+{
+  transform: rotate(135deg);
+}
+
+.menu-wrapper .toggle:checked + .hamburger .bar::before,
+.menu-wrapper .toggle:checked + .hamburger .bar::after /*Menu burger*/
+{
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.menu /*Menu burger*/
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  background: rgba(25,25,25,0.85);
+  z-index: 1;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.menu ul li /*Menu burger*/
+{
+  color: var(--light);
+  font-size: 20px;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  box-sizing: 15px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu ul li:hover /*Menu burger*/
+{
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  }
+
+.menu-wrapper .toggle:checked + .hamburger + .menu /*Menu burger*/
+{
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+#menu1,#menu2,#menu3 /*On sépare en 2 les boxes*/
+{
+	display: flex;
+}
+
+.gauche1, .droite1, .gauche2, .droite2, .gauche3, .droite3 /*On stylise les box (couleur, taille, marge, etc...)*/
+{
+	background-color: rgba(200, 97, 89, .5);
+	margin: 12px;
+	width: 50%;
+	text-align: center;
+  padding: 5%;
+}
+
+.formulaire, .text /*Centrage du formulaire*/
+{
+  text-align: center;
+}
